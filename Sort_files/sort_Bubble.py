@@ -14,22 +14,26 @@ def Bubble_sort_revers(a_list):
             break
     return a_list
 
-#เปลี่ยนชื่อไฟล์เอาได้เลย
 
 
-file = 'amphoe'
+file = 'tambol'
 list_file = []
-with open(f'week4/{file}.txt', 'r', encoding='utf-8') as files:
+with open(f'{file}.txt', 'r', encoding='utf-8') as files:
     for line in files:
         list_file.append(line.strip())
         
 #เริ่ม
 list_reversed = Bubble_sort_revers(list_file)
 # แสดงผล
-output_file = f'week4/Result_Sort/{file}_Bubble.txt'
+output_file = f'result_sort/{file}_Bubble.txt'
 with open(output_file, 'w', encoding='utf-8') as write_province:
     for row in list_reversed:
         write_province.write(f"{row}\n")
         
 elapsed = timeit.default_timer() - start_time
 print(f"{elapsed} seconds")
+#วิธี Bubble
+#amphoe  0.032537082995986566 วินาที
+#mm  1.1037465420013177 วินาที
+#province  0.0010177500007557683 วินาที
+#tambol  1.9172543329987093 วินาที
